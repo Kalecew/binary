@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+
+
+$text-colors: (
+	light: #fff,
+	gray: #888,
+	dark: #000
+);
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: inherit;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+body{
+	font-family: 'Lato', 'Arial', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: normal;
+}
+.container{
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+}
+
+// зависимость цвета текста секции, линии под заголовком, кнопок, цвета стрелки вниз
+@mixin theme($color){
+	&--#{$color} {
+		color: map-get($text-colors,$color);
+		.title{
+			&--bottom-line::after{
+				background-color: map-get($text-colors,$color);
+			}
+		}
+		.btn{
+			border-color: map-get($text-colors,$color);
+			&::after{
+				background-color: map-get($text-colors,$color);	
+			}
+			&:hover{
+				color: invert(map-get($text-colors,$color));
+			}
+		}
+		.arrow-down{
+			border-color: map-get($text-colors,$color);
+		}
+	}
+}
+.text-section {
+	@include theme(light);
+	@include theme(dark);
+}
+
+.title{
+	font-size: 34px;
+	line-height: 1.2;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	text-align: center;
+	&--bottom-line::after{
+		content:"";
+		display: block;
+		width: 81px;
+		height: 1px;
+    	margin: 25px auto 0;
+	}
+}
+.btn{
+	display: block;
+	padding: 12px 40px;
+	text-transform: uppercase;
+	border: 1px solid transparent;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 400;
+	letter-spacing: 0.06em;
+	position: relative;
+	transition: color .2s ease-in;
+	&::after{
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: scale(0);
+		transition: transform .2s ease;			
+	}
+	&:hover::after{
+		transform: scale(1);
+	}
+	&__text{
+		position: relative;
+		z-index: 1;
+	}
+}
+.first-screen {
+	background: #4166a0 url('../img/bg_first_screen.jpg') center no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	padding: 165px 0;
+	display: flex;
+    flex-direction: column;
+	&__content{
+		flex: 1 1 auto;
+	}
+	&__btn {
+		margin-bottom: 75px;
+	}
+	&__arrow {
+		margin: 0 auto;
+	}
+}
+.content-first-screen{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 50px;
+}
+.title-first-screen{
+	line-height: 40px;
+	font-weight: 900;
+	&:after{
+		width: 105px;
+		height: 2px;
+		margin: 50px auto 0;
+	}
+}
+.subtitle-first-screen{
+	font-size: 26px;
+	line-height: 40px;
+	font-weight: 400;
+	text-transform: none;
+	letter-spacing: 0.16em;
+}
+.arrow-down{
+	position: relative;
+	display: block;
+	border-top: 2px solid transparent;
+	border-right: 2px solid transparent;
+	width: 8px;
+	height: 8px;
+	transform: rotate(135deg);
+	animation: arrow 1.5s infinite ease;
+}
+@keyframes arrow {
+	0%{top:0px;}
+	50%{top:10px;}
+	100%{top:0px;}
+}
+
+
+
+
+
+@media (max-width: 1400px) {
+	.first-screen{
+		padding: 70px 0;		
+		&__btn {
+			margin-bottom: 30px;
+		}
+	}
+	.content-first-screen{
+		gap: 30px;
+	}
+	.img-logo{
+		width: 150px;
+		height: auto;
+	}
+	.title{
+		font-size: 28px;
+	}
+	.subtitle-first-screen{
+		font-size: 20px;
+	}
+	.title-first-screen{
+		&:after{
+			margin: 30px auto 0;
+		}
+	}
+}
+
+/* Landscape tablets and medium desktops */
+@media (max-width: 1199px) {
+}
+
+/* Portrait tablets and small desktops */
+@media (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.first-screen{
+		padding: 50px 0;
+	}
+	.img-logo{
+		width: 100px;
+		height: auto;
+	}
+	.title{
+		font-size: 24px;
+	}
+	.subtitle-first-screen{
+		font-size: 18px;
+	}
+}
+
+/* Iphone 5 */
+@media (max-width: 320px) {
+	.first-screen{
+		padding: 20px 0;
+		&__btn {
+			margin-bottom: 20px;
+		}
+	}
+	.content-first-screen{
+		gap: 20px;
+	}
+	.img-logo{
+		width: 60px;
+		height: auto;
+	}
+	.title{
+		font-size: 20px;
+	}
+	.subtitle-first-screen{
+		font-size: 14px;
+	}
+	.title-first-screen{
+		&:after{
+			margin: 20px auto 0;
+		}
+	}
+}
