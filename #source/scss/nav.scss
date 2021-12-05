@@ -26,10 +26,10 @@
 	line-height: 1.2;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: map-get($text-colors,dark-gray);
+	color: $dark-gray-text;
 	transition: color .2s linear;
 	&:hover{
-		color: map-get($text-colors,nav-hover);
+		color: $nav-hover;
 	}
 	@media (max-width: $xs) {
 		text-align: center;

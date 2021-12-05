@@ -2,13 +2,15 @@
 
 
 
-$text-colors: (
+$text-colors-themes: (
 	light: #fff,
-	gray: #888,
-	dark-gray: #333,
-	dark: #000,
-	nav-hover: #ada074
+	dark: #000
 );
+
+$gray-text: #888;
+$dark-gray-text: #333;
+$nav-hover: #ada074;
+$border-icon: #eee;
 
 $lg: 1400px;
 $md: 1199px;
@@ -22,6 +24,9 @@ $xxs: 320px;
 	box-sizing: border-box;
 	color: inherit;
 }
+html{
+	scroll-behavior: smooth;
+}
 a{
 	text-decoration: none;
 }
@@ -29,8 +34,7 @@ ul{
 	list-style: none;
 }
 body{
-	font-family: 'Lato', 'Arial', sans-serif;
-	scroll-behavior: smooth;
+	font-family: 'Lato', 'Arial', sans-serif;	
 }
 h1,h2,h3,h4,h5,h6{
 	font-size: inherit;
@@ -58,23 +62,23 @@ h1,h2,h3,h4,h5,h6{
 // зависимость цвета текста секции, линии под заголовком, кнопок, стрелки вниз
 @mixin theme($color){
 	&--#{$color} {
-		color: map-get($text-colors,$color);
+		color: map-get($text-colors-themes,$color);
 		.title{
 			&--bottom-line::after{
-				background-color: map-get($text-colors,$color);
+				background-color: map-get($text-colors-themes,$color);
 			}
 		}
 		.btn{
-			border-color: map-get($text-colors,$color);
+			border-color: map-get($text-colors-themes,$color);
 			&::after{
-				background-color: map-get($text-colors,$color);	
+				background-color: map-get($text-colors-themes,$color);	
 			}
 			&:hover{
-				color: invert(map-get($text-colors,$color));
+				color: invert(map-get($text-colors-themes,$color));
 			}
 		}
 		.arrow-down{
-			border-color: map-get($text-colors,$color);
+			border-color: map-get($text-colors-themes,$color);
 		}
 	}
 }
@@ -106,6 +110,13 @@ h1,h2,h3,h4,h5,h6{
 	@media (max-width: $xxs) {
 		font-size: 20px;
 	}
+}
+.title-desc{
+	font-size: 14px;
+	line-height: 25px;
+	color: $gray-text;
+	text-align: center;
+	max-width: 700px;
 }
 .btn{
 	display: block;
@@ -149,9 +160,13 @@ h1,h2,h3,h4,h5,h6{
 		width: 60px;
 	}
 }
+.lowercase{
+	text-transform: lowercase;
+}
 
 
 
 
 @import 'first-screen.scss';
 @import 'nav.scss';
+@import 'about.scss';
