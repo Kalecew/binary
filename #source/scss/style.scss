@@ -5,7 +5,9 @@
 $text-colors: (
 	light: #fff,
 	gray: #888,
-	dark: #000
+	dark-gray: #333,
+	dark: #000,
+	nav-hover: #ada074
 );
 
 $lg: 1400px;
@@ -28,6 +30,7 @@ ul{
 }
 body{
 	font-family: 'Lato', 'Arial', sans-serif;
+	scroll-behavior: smooth;
 }
 h1,h2,h3,h4,h5,h6{
 	font-size: inherit;
@@ -151,3 +154,4 @@ h1,h2,h3,h4,h5,h6{
 
 
 @import 'first-screen.scss';
+@import 'nav.scss';
