@@ -8,6 +8,12 @@ $text-colors: (
 	dark: #000
 );
 
+$lg: 1400px;
+$md: 1199px;
+$sm: 767px;
+$xs: 480px;
+$xxs: 320px;
+
 *{
 	margin: 0;
 	padding: 0;
@@ -46,7 +52,7 @@ h1,h2,h3,h4,h5,h6{
     clip-path: inset(100%);
 }
 
-// зависимость цвета текста секции, линии под заголовком, кнопок, цвета стрелки вниз
+// зависимость цвета текста секции, линии под заголовком, кнопок, стрелки вниз
 @mixin theme($color){
 	&--#{$color} {
 		color: map-get($text-colors,$color);
@@ -86,7 +92,16 @@ h1,h2,h3,h4,h5,h6{
 		display: block;
 		width: 81px;
 		height: 1px;
-    	margin: 25px auto 0;
+    	margin: 20px auto 0;
+	}
+	@media (max-width: $lg) {
+		font-size: 28px;
+	}
+	@media (max-width: $xs) {
+		font-size: 24px;
+	}
+	@media (max-width: $xxs) {
+		font-size: 20px;
 	}
 }
 .btn{
@@ -119,149 +134,20 @@ h1,h2,h3,h4,h5,h6{
 		z-index: 1;
 	}
 }
-.first-screen {
-	background: #4166a0 url('../img/bg_first_screen.jpg') center no-repeat;
-	background-size: cover;
-	min-height: 100vh;
-	padding: 165px 0;
-	display: flex;
-    flex-direction: column;
-	&__content{
-		flex: 1 1 auto;
-	}
-	&__btn {
-		margin-bottom: 75px;
-	}
-	&__arrow {
-		margin: 0 auto;
-	}
-}
-.content-first-screen{
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	gap: 50px;
-}
-.title-first-screen{
-	line-height: 40px;
-	font-weight: 900;
-	&:after{
-		width: 105px;
-		height: 2px;
-		margin: 50px auto 0;
-	}
-}
-.subtitle-first-screen{
-	font-size: 26px;
-	line-height: 40px;
-	font-weight: 400;
-	text-transform: none;
-	letter-spacing: 0.16em;
-}
-.arrow-down{
-	position: relative;
-	display: block;
-	border-top: 2px solid transparent;
-	border-right: 2px solid transparent;
-	width: 8px;
-	height: 8px;
-	transform: rotate(135deg);
-	animation: arrow 1.5s infinite ease;
-}
-@keyframes arrow {
-	0%{top:0px;}
-	50%{top:10px;}
-	100%{top:0px;}
-}
-
-
-
-
-
-@media (max-width: 1400px) {
-	.first-screen{
-		padding: 70px 0;		
-		&__btn {
-			margin-bottom: 30px;
-		}
-	}
-	.content-first-screen{
-		gap: 30px;
-	}
-	.img-logo{
+.img-logo{
+	@media (max-width: $lg) {
 		width: 150px;
 		height: auto;
 	}
-	.title{
-		font-size: 28px;
-	}
-	.subtitle-first-screen{
-		font-size: 20px;
-	}
-	.title-first-screen{
-		&:after{
-			margin: 30px auto 0;
-		}
-	}
-}
-
-/* Landscape tablets and medium desktops */
-@media (max-width: 1199px) {
-}
-
-/* Portrait tablets and small desktops */
-@media (max-width: 991px) {
-
-}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {
-	
-}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-	.first-screen{
-		padding: 50px 0;
-	}
-	.img-logo{
+	@media (max-width: $xs) {
 		width: 100px;
-		height: auto;
 	}
-	.title{
-		font-size: 24px;
-	}
-	.subtitle-first-screen{
-		font-size: 18px;
+	@media (max-width: $xxs) {
+		width: 60px;
 	}
 }
 
-/* Iphone 5 */
-@media (max-width: 320px) {
-	.first-screen{
-		padding: 20px 0;
-		&__btn {
-			margin-bottom: 20px;
-		}
-	}
-	.content-first-screen{
-		gap: 20px;
-	}
-	.img-logo{
-		width: 60px;
-		height: auto;
-	}
-	.title{
-		font-size: 20px;
-	}
-	.subtitle-first-screen{
-		font-size: 14px;
-	}
-	.title-first-screen{
-		&:after{
-			margin: 20px auto 0;
-		}
-	}
-}
+
+
+
+@import 'first-screen.scss';
