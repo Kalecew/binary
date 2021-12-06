@@ -10,7 +10,9 @@ $text-colors-themes: (
 $gray-text: #888;
 $dark-gray-text: #333;
 $nav-hover: #ada074;
+$filter-hover: #ada074;
 $border-icon: #eee;
+$bg-gray: #f3f3f3;
 
 $lg: 1400px;
 $md: 1199px;
@@ -18,155 +20,13 @@ $sm: 767px;
 $xs: 480px;
 $xxs: 320px;
 
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	color: inherit;
-}
-html{
-	scroll-behavior: smooth;
-}
-a{
-	text-decoration: none;
-}
-ul{
-	list-style: none;
-}
-body{
-	font-family: 'Lato', 'Arial', sans-serif;	
-}
-h1,h2,h3,h4,h5,h6{
-	font-size: inherit;
-	line-height: inherit;
-	font-weight: normal;
-}
-.container{
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 0 20px;
-}
-.visually-hidden:not(:focus):not(:active) {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    margin: -1px;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    border: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-}
-
-// зависимость цвета текста секции, линии под заголовком, кнопок, стрелки вниз
-@mixin theme($color){
-	&--#{$color} {
-		color: map-get($text-colors-themes,$color);
-		.title{
-			&--bottom-line::after{
-				background-color: map-get($text-colors-themes,$color);
-			}
-		}
-		.btn{
-			border-color: map-get($text-colors-themes,$color);
-			&::after{
-				background-color: map-get($text-colors-themes,$color);	
-			}
-			&:hover{
-				color: invert(map-get($text-colors-themes,$color));
-			}
-		}
-		.arrow-down{
-			border-color: map-get($text-colors-themes,$color);
-		}
-	}
-}
-.text-section {
-	@include theme(light);
-	@include theme(dark);
-}
-
-.title{
-	font-size: 34px;
-	line-height: 1.2;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 0.16em;
-	text-align: center;
-	&--bottom-line::after{
-		content:"";
-		display: block;
-		width: 81px;
-		height: 1px;
-    	margin: 20px auto 0;
-	}
-	@media (max-width: $lg) {
-		font-size: 28px;
-	}
-	@media (max-width: $xs) {
-		font-size: 24px;
-	}
-	@media (max-width: $xxs) {
-		font-size: 20px;
-	}
-}
-.title-desc{
-	font-size: 14px;
-	line-height: 25px;
-	color: $gray-text;
-	text-align: center;
-	max-width: 700px;
-}
-.btn{
-	display: block;
-	padding: 12px 40px;
-	text-transform: uppercase;
-	border: 1px solid transparent;
-	font-size: 16px;
-	line-height: 1;
-	font-weight: 400;
-	letter-spacing: 0.06em;
-	position: relative;
-	transition: color .2s ease-in;
-	&::after{
-		content: "";
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		transform: scale(0);
-		transition: transform .2s ease;			
-	}
-	&:hover::after{
-		transform: scale(1);
-	}
-	&__text{
-		position: relative;
-		z-index: 1;
-	}
-}
-.img-logo{
-	@media (max-width: $lg) {
-		width: 150px;
-		height: auto;
-	}
-	@media (max-width: $xs) {
-		width: 100px;
-	}
-	@media (max-width: $xxs) {
-		width: 60px;
-	}
-}
-.lowercase{
-	text-transform: lowercase;
-}
 
 
 
 
+
+@import 'main.scss';
 @import 'first-screen.scss';
 @import 'nav.scss';
 @import 'about.scss';
+@import 'portfolio.scss';
