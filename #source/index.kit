@@ -55,7 +55,6 @@
 					<div class="services__icon icon-services icon-services--three"></div>
 					<p class="services__title title-services">Marketing</p>
 					<p class="services__desc desc-services">We’ll help you establish the right goals and build the right paths. Success depends on setting the right intention.</p>
-					<!-- <p class="services__desc desc-services">We’ll&nbsp;help&nbsp;you&nbsp;establish&nbsp;the&nbsp;right&nbsp;goals<br>and&nbsp;build&nbsp;the&nbsp;right&nbsp;paths.&nbsp;Success&nbsp;depends<br>on setting the right intention.</p> -->
 				</li>
 
 			</ul>
@@ -65,18 +64,49 @@
 		<div class="container">
 			<h2 class="portfolio__title title title--bottom-line ">Portfolio</h2>
 			<ul class="portfolio__filter filter">
-				<li class="item-filter filter__item"><a class="link-filter link-filter--active" href="#first-screen">All</a></li>
-				<li class="item-filter filter__item"><a class="link-filter" href="#about">Web</a></li>
-				<li class="item-filter filter__item"><a class="link-filter" href="#portfolio">Apps</a></li>
-				<li class="item-filter filter__item"><a class="link-filter" href="#contact">Other</a></li>
+				<li class="item-filter filter__item"><button class="link-filter link-filter--active" id="all">All</button></li>
+				<li class="item-filter filter__item"><button class="link-filter" id="web">Web</button></li>
+				<li class="item-filter filter__item"><button class="link-filter" id="apps">Apps</button></li>
+				<li class="item-filter filter__item"><button class="link-filter" id="other">Other</button></li>
 			</ul>
 			<div class="portfolio__grid grid-portfolio">
-				<a href="#"><img src="files/portfolio/theme1.jpg" class="preview-portfolio" alt="theme1" width="538" height="356"></a>
-				<a href="#"><img src="files/portfolio/theme2.jpg" class="preview-portfolio" alt="theme2" width="538" height="356"></a>
-				<a href="#"><img src="files/portfolio/theme3.jpg" class="preview-portfolio" alt="theme3" width="538" height="356"></a>
-				<a href="#"><img src="files/portfolio/theme4.jpg" class="preview-portfolio" alt="theme4" width="538" height="356"></a>
-				<a href="#"><img src="files/portfolio/theme5.jpg" class="preview-portfolio" alt="theme5" width="538" height="356"></a>
-				<a href="#"><img src="files/portfolio/theme6.jpg" class="preview-portfolio" alt="theme6" width="538" height="356"></a>
+				<!-- для проверки адаптивности изображений разных размеров -->
+<!-- 				<a class="img-wrap-portfolio" href="#">
+					<img src="files/portfolio/theme1_test.jpg" class="preview-portfolio" alt="theme1" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio" href="#">
+					<img src="https://33.img.avito.st/1280x960/8595697033.jpg" class="preview-portfolio" alt="theme2" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio" href="#">
+					<img src="files/portfolio/theme3_test.jpg" class="preview-portfolio" alt="theme3" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio" href="#">
+					<img src="files/portfolio/theme4_test.jpg" class="preview-portfolio" alt="theme4" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio" href="#">
+					<img src="files/portfolio/theme5_test.jpg" class="preview-portfolio" alt="theme5" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio" href="#">
+					<img src="files/portfolio/theme6_test.jpg" class="preview-portfolio" alt="theme6" width="538" height="356">
+				</a> -->
+				<a class="img-wrap-portfolio f_web" href="#">
+					<img src="files/portfolio/theme1.jpg" class="preview-portfolio" alt="theme1" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio f_web" href="#">
+					<img src="files/portfolio/theme2.jpg" class="preview-portfolio" alt="theme2" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio f_web" href="#">
+					<img src="files/portfolio/theme3.jpg" class="preview-portfolio" alt="theme3" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio f_apps" href="#">
+					<img src="files/portfolio/theme4.jpg" class="preview-portfolio" alt="theme4" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio f_other" href="#">
+					<img src="files/portfolio/theme5.jpg" class="preview-portfolio" alt="theme5" width="538" height="356">
+				</a>
+				<a class="img-wrap-portfolio f_other" href="#">
+					<img src="files/portfolio/theme6.jpg" class="preview-portfolio" alt="theme6" width="538" height="356">
+				</a>
 			</div>
 			<div class="portfolio__footer footer-portfolio">
 				<a href="#" class="portfolio__btn btn"><span class="btn__text">Read more</span></a>
