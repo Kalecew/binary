@@ -1,0 +1,39 @@
+.partners{
+	padding-top: 100px;
+	padding-bottom: 105px;
+	background: #4269a5 url('../img/bg_partners.jpg') center no-repeat;
+	background-size: cover;
+	&__content{
+		margin: 95px auto 0;
+		@media (max-width: $md) {
+			margin: 40px auto 0;
+		}
+	}
+	@media (max-width: $md) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+.title-partners{
+	font-size: 30px;
+	line-height: 1.2;
+	font-weight: 300;
+	letter-spacing: 0.06em;
+	text-align: center;
+}
+.content-partners{
+	max-width: 590px;
+	display: flex;
+	gap: 25px 15px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	&__item:nth-child(4){
+		align-self: center;
+	}
+	@media (max-width: $sm) {
+		justify-content: space-around;
+	}
+	@media (max-width: $xs) {
+		justify-content: space-around;
+	}
+}
