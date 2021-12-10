@@ -12,7 +12,12 @@ $dark-gray-text: #333;
 $nav-hover: #ada074;
 $filter-hover: #ada074;
 $border-icon: #eee;
-$bg-gray: #f3f3f3;
+$bg-light-gray: #f3f3f3;
+$bg-gray: #eee;
+$border-input: #000;
+$border-input-focus: green;
+$border-input-error: red;
+$border-social: #1e1e1e;
 
 $lg: 1400px;
 $md: 1199px;
@@ -31,3 +36,4 @@ $xxs: 320px;
 @import 'about.scss';
 @import 'portfolio.scss';
 @import 'partners.scss';
+@import 'contacts.scss';

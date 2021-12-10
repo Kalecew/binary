@@ -1,9 +1,9 @@
 .portfolio{
 	padding: 100px 0 60px;
-	background-color: $bg-gray;
+	background-color: $bg-light-gray;
 	&__filter{
 		margin: 40px auto 0;
-		@media (max-width: $md) {
+		@media (max-width: $lg) {
     		margin: 20px auto 0;
     	}
 	}
@@ -15,11 +15,11 @@
 	}
 	&__footer{
 		margin-top: 60px;
-		@media (max-width: $md) {
+		@media (max-width: $lg) {
 			margin-top: 50px;
 		}
 	}
-	@media (max-width: $md) {
+	@media (max-width: $lg) {
 		padding: 70px 0 50px;
 	}
 }

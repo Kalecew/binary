@@ -1,0 +1,148 @@
+.contacts{
+	padding-top: 180px;
+	padding-bottom: 80px;
+	&__content{
+		margin: 120px auto 0;
+		@media (max-width: $lg) {
+			margin: 50px auto 0;
+		}
+	}
+	@media (max-width: $lg) {
+		padding-top: 80px;
+		padding-bottom: 50px;
+	}
+}
+.content-contacts{
+	display: flex;
+	max-width: 900px;
+	&__form{
+		flex: 1 1 50%;
+		@media (max-width: $md) {
+			flex: 0 0 453px;
+			align-self: center;
+		}
+		@media (max-width: $sm) {
+			flex: 0 0 0;
+		}
+	}
+	&__info{
+		flex: 1 1 50%;
+		@media (max-width: $md) {
+			margin-top: 20px;
+		}
+		@media (max-width: $sm) {
+			flex: 0 0 0;
+		}
+	}
+	@media (max-width: $sm) {
+		flex-direction: column;
+	}
+}
+.form{
+	display: flex;
+	flex-direction: column;
+	padding-right: 68px;
+	&__input{
+		margin-top: 18px;
+	}
+	&__textarea-wrap{
+		margin-top: 75px;
+		@media (max-width: $lg) {
+			margin-top: 20px;
+		}
+	}
+	&__btn{
+		margin-top: 35px;
+		align-self: flex-end;
+		@media (max-width: $sm) {
+			align-self: stretch;
+		}
+	}
+	@media (max-width: $sm) {
+		padding-right: 0;
+	}
+}
+.row-form{
+	display: flex;
+	justify-content: space-between;
+	@media (max-width: $xs) {
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+.label-form{
+	font-size: 14px;
+	line-height: 1.2;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	display: block;
+}
+.input-form{
+	background: $bg-light-gray;
+	resize: none;
+	border-top: 1px solid $border-input;
+	&:valid{
+		border-top: 1px solid $border-input-focus;
+	}
+	&:invalid:not(:placeholder-shown){
+		border-top: 1px solid $border-input-error;
+	}
+	&:invalid:focus{
+		border-top: 1px solid $border-input-error;
+	}
+	&--text{
+		box-sizing: border-box;
+		padding: 5px 15px;
+		width: 161px;
+		height: 35px;
+		@media (max-width: $xs) {
+			width: 100%;
+		}
+	}
+	&--textarea{
+		box-sizing: border-box;
+		padding: 5px 15px;
+		width: 100%;
+		height: 118px;
+	}
+}
+.info-contacts{
+	padding-left: 15px;
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: 300;
+	&__name{
+		margin-top: 30px;
+	}
+	&__social{
+		margin-top: 20px;
+	}
+	&__email{
+		margin-top: 10px;
+	}
+	@media (max-width: $sm) {
+		padding-left: 0;
+	}
+}
+.social{
+	display: flex;
+	column-gap: 12px;
+}
+.social-link{
+	display: block;
+	font-size: 0;
+	width: 29px;
+	height: 29px;
+	border: 2px solid $border-social;
+	border-radius: 50px;
+	position: relative;
+	&::before{
+		color: map-get($text-colors-themes,dark);
+		font-size: 15px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

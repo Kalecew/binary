@@ -5,11 +5,11 @@
 	background-size: cover;
 	&__content{
 		margin: 95px auto 0;
-		@media (max-width: $md) {
+		@media (max-width: $lg) {
 			margin: 40px auto 0;
 		}
 	}
-	@media (max-width: $md) {
+	@media (max-width: $lg) {
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
