@@ -7,13 +7,17 @@ $text-colors-themes: (
 	dark: #000
 );
 
+$silver-text: #a4a4a4;
+$light-gray-text: #6c6c6c;
 $gray-text: #888;
 $dark-gray-text: #333;
 $nav-hover: #ada074;
 $filter-hover: #ada074;
-$border-icon: #eee;
+$nav-footer-hover: #fff;
 $bg-light-gray: #f3f3f3;
 $bg-gray: #eee;
+$bg-dark-gray: #3c3c3c;
+$border-icon: #eee;
 $border-input: #000;
 $border-input-focus: green;
 $border-input-error: red;
@@ -37,3 +41,4 @@ $xxs: 320px;
 @import 'portfolio.scss';
 @import 'partners.scss';
 @import 'contacts.scss';
+@import 'footer.scss';
