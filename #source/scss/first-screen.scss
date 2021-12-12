@@ -75,7 +75,8 @@
 		font-size: 14px;
 	}
 }
-.arrow-down{
+.arrow-down::before{
+	content: '';
 	position: relative;
 	display: block;
 	border-top: 2px solid transparent;
@@ -89,29 +90,5 @@
 	0%{top:0px;}
 	50%{top:10px;}
 	100%{top:0px;}
-}
-
-
-
-
-
-@media (max-width: 1400px) {
-	.first-screen{
-				
-		&__btn {
-			
-		}
-	}
-	.content-first-screen{
-		
-	}
-	.subtitle-first-screen{
-		
-	}
-	.title-first-screen{
-		&:after{
-			
-		}
-	}
 }
 

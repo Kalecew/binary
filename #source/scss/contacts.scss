@@ -88,7 +88,7 @@
 	&:invalid:not(:placeholder-shown){
 		border-top: 1px solid $border-input-error;
 	}
-	&:invalid:focus{
+	.checked-invalid-form &:invalid{
 		border-top: 1px solid $border-input-error;
 	}
 	&--text{
@@ -125,6 +125,12 @@
 		padding-left: 0;
 	}
 }
+.text-info-contacts{
+	max-width: 250px;
+	@media (max-width: $sm) {
+		max-width: none;
+	}
+}
 .social{
 	display: flex;
 	column-gap: 12px;
@@ -137,6 +143,13 @@
 	border: 2px solid $border-social;
 	border-radius: 50px;
 	position: relative;
+	transition: border .2s linear;
+	&:hover{
+		border: 2px solid $social-hover;
+		&::before{
+			color: $social-hover;
+		}
+	}
 	&::before{
 		color: map-get($text-colors-themes,dark);
 		font-size: 15px;
@@ -144,5 +157,9 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		transition: color .2s linear;
 	}
+}
+.email-link-info-contacts:hover{
+	text-decoration: underline;
 }
