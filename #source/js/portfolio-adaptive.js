@@ -1,26 +1,28 @@
 window.onload = function(){
 	const allImages = document.querySelectorAll('.preview-portfolio')
 	const gridPortfolio = document.querySelector('.grid-portfolio')
+	// const minHeight = minHeightF()
+	const minHeight = 336
 	let k = 0
 	initHeightImgPortfolio()	
 	window.onresize = function(){
-		adaptivePortfolio()
+		adaptPortfolio()
 	}
 
-	function initHeightImgPortfolio(){
-		const minHeight = minHeightF()	
+	function initHeightImgPortfolio(){			
 		k = minHeight / allImages[0].offsetWidth
-		adaptivePortfolio()
+		adaptPortfolio()
 	}
-	function minHeightF(){	
-		const masHeights = []		
-		allImages.forEach(function(img){			
-			masHeights.push(img.offsetHeight)			
-		})
-		const result = Math.min(...masHeights)		
-		return result
-	}
-	function adaptivePortfolio(){	
+	// функция была актуальна для статичного количества элементов
+	// function minHeightF(){	
+	// 	const masHeights = []		
+	// 	allImages.forEach(function(img){			
+	// 		masHeights.push(img.offsetHeight)			
+	// 	})
+	// 	const result = Math.min(...masHeights)		
+	// 	return result
+	// }
+	function adaptPortfolio(){	
 		gridPortfolio.style.gridAutoRows = (allImages[0].offsetWidth * k) + "px"
 	}
 }
