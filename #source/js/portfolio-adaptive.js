@@ -2,12 +2,16 @@ window.onload = function(){
 	const allImages = document.querySelectorAll('.preview-portfolio')
 	const gridPortfolio = document.querySelector('.grid-portfolio')
 	// const minHeight = minHeightF()
-	const minHeight = 336
+	const minHeight = 330
 	let k = 0
-	initHeightImgPortfolio()	
-	window.onresize = function(){
-		adaptPortfolio()
+
+	if(allImages.length != 0){
+		initHeightImgPortfolio()	
+		window.onresize = function(){
+			adaptPortfolio()
+		}
 	}
+	
 
 	function initHeightImgPortfolio(){			
 		k = minHeight / allImages[0].offsetWidth
