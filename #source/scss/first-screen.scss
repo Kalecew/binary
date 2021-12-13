@@ -75,10 +75,19 @@
 		font-size: 14px;
 	}
 }
+.arrow-down{
+	display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+}
 .arrow-down::before{
 	content: '';
-	position: relative;
 	display: block;
+	position: absolute;
+	left: 40%;
+	top: 0;
 	border-top: 2px solid transparent;
 	border-right: 2px solid transparent;
 	width: 8px;
