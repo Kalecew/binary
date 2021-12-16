@@ -1,17 +1,23 @@
 const readMoreBtn = document.querySelector('#readmore')
+function PortfolioItem(title, img, link, filter){
+	this.title = title
+	this.img = img
+	this.link = link
+	this.filter = filter
+}
 const portfolioItems = [ 
-	{title: 'Keira', img: 'theme1', link:'#', filter: 'web'},
-	{title: 'SRK', img: 'theme2', link:'#', filter: 'apps'},
-	{title: 'EduPro', img: 'theme3', link:'#', filter: 'other'},
-	{title: 'EightyDays', img: 'theme4', link:'#', filter: 'web'},
-	{title: 'Lily', img: 'theme5', link:'#', filter: 'web'},
-	{title: 'Daisy', img: 'theme6', link:'#', filter: 'apps'},
-	{title: 'Nutritia', img: 'theme7', link:'#', filter: 'apps'},
-	{title: 'Techup', img: 'theme8', link:'#', filter: 'other'},
-	{title: 'themKantere1', img: 'theme9', link:'#', filter: 'other'},
-	{title: 'Moreno', img: 'theme10', link:'#', filter: 'other'},
-	{title: 'Homeswort', img: 'theme11', link:'#', filter: 'other'},
-	{title: 'Angel', img: 'theme12', link:'#', filter: 'web'}
+	new PortfolioItem('Keira', 'theme1', '#', 'web'),
+	new PortfolioItem('SRK', 'theme2', '#', 'apps'),
+	new PortfolioItem('EduPro', 'theme3', '#', 'other'),
+	new PortfolioItem('EightyDays', 'theme4', '#', 'web'),
+	new PortfolioItem('Lily', 'theme5', '#', 'web'),
+	new PortfolioItem('Daisy', 'theme6', '#', 'apps'),
+	new PortfolioItem('Nutritia', 'theme7', '#', 'apps'),
+	new PortfolioItem('Techup', 'theme8', '#', 'other'),
+	new PortfolioItem('themKantere1', 'theme9', '#', 'other'),
+	new PortfolioItem('Moreno', 'theme10', '#', 'other'),
+	new PortfolioItem('Homeswort', 'theme11', '#', 'other'),
+	new PortfolioItem('Angel', 'theme12', '#', 'web')
 ] 
 const countLoadImages = 6
 let alreadyOutputImages = 0
