@@ -2,7 +2,8 @@ window.onload = function(){
 	const allImages = document.querySelectorAll('.preview-portfolio')
 	const gridPortfolio = document.querySelector('.grid-portfolio')
 	// const minHeight = minHeightF()
-	const minHeight = 330
+	const maxHeight = 330
+	const maxWidth = 538
 	let k = 0
 
 	if(allImages.length != 0){
@@ -14,7 +15,7 @@ window.onload = function(){
 	
 
 	function initHeightImgPortfolio(){			
-		k = minHeight / allImages[0].offsetWidth
+		k = maxHeight / maxWidth
 		adaptPortfolio()
 	}
 	// функция была актуальна для статичного количества элементов
