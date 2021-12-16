@@ -4,9 +4,15 @@
 	padding-bottom: 45px;
 	&__nav{
 		margin-top: 40px;
+		@media (max-width: $xs) {
+			margin-top: 20px;
+		}
 	}
 	&__copyright{
 		margin-top: 35px;
+		@media (max-width: $xs) {
+			margin-top: 15px;
+		}
 	}
 }
 .container-footer{
