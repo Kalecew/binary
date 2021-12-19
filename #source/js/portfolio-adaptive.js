@@ -28,7 +28,7 @@ window.onload = function(){
 	// 	return result
 	// }
 	function adaptPortfolio(){	
-		gridPortfolio.style.gridAutoRows = (allImages[0].offsetWidth * k) + "px"
+		gridPortfolio.style.gridAutoRows = (allImages[0].width * k) + "px"
 	}
 }
 	
