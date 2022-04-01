@@ -8,3 +8,4 @@ https://kalecew.github.io/binary/
 1. Скачать Prepros
 2. Перетащить папку с проектом в Prepros
 3. В Prepros нажать Server -> Open Preview
+4. Все изменения делать в папке #Source
