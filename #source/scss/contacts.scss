@@ -22,7 +22,7 @@
 			align-self: center;
 		}
 		@media (max-width: $sm) {
-			flex: 0 0 0;
+			flex: 0 0 auto;
 		}
 	}
 	&__info{
@@ -131,33 +131,39 @@
 		max-width: none;
 	}
 }
-.social{
-	display: flex;
-	column-gap: 12px;
-}
-.social-link{
-	display: block;
-	font-size: 0;
-	width: 29px;
-	height: 29px;
-	border: 2px solid $border-social;
-	border-radius: 50px;
-	position: relative;
-	transition: border .2s linear;
-	&:hover{
-		border: 2px solid $social-hover;
-		&::before{
-			color: $social-hover;
+.social{	
+	&__list {
+		display: flex;
+	}
+	&__item {
+		& + & {
+			margin-left: 12px;
 		}
 	}
-	&::before{
-		color: map-get($text-colors-themes,dark);
-		font-size: 15px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		transition: color .2s linear;
+	&__link {
+		display: block;
+		font-size: 0;
+		width: 29px;
+		height: 29px;
+		border: 2px solid $border-social;
+		border-radius: 50px;
+		position: relative;
+		transition: border .2s linear;	
+		&:hover{
+			border: 2px solid $social-hover;
+			&::before{
+				color: $social-hover;
+			}
+		}
+		&::before{
+			color: map-get($text-colors-themes,dark);
+			font-size: 15px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transition: color .2s linear;
+		}
 	}
 }
 .email-link-info-contacts:hover{

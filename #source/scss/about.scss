@@ -6,7 +6,7 @@
     		margin: 20px auto 0;
     	}
 	}
-	&__services{
+	&__services {
 		margin: 70px auto 0;
 		@media (max-width: $lg) {
 			margin-top: 50px;
@@ -21,66 +21,71 @@
 }
 .services{
 	max-width: 850px;
-	display: flex;
-	justify-content: space-between;
-	gap: 50px;
-	&__item{
-		flex: 1 1 0;
+	@media (max-width: $md) {
+		max-width: 480px;
+	}		
+	&__list {				
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $md) {
+			flex-direction: column;
+		}		
 	}
+	&__item {
+		flex: 1 1 0;		
+		& + & {
+			margin: 0 0 0 50px;
+			@media (max-width: $md) {
+				margin: 25px 0 0 0;
+			}
+		}
+	}
+	&__card {
+
+	}	
+}
+.service{
+	position: relative;
 	&__icon{
 		margin: 0 auto;
+		width: 92px;
+		height: 92px;
+		border: 2px solid $border-icon;
+		border-radius: 50px;
+		&--one{
+			background: url('../img/services/window.png') center no-repeat;
+		}
+		&--two{
+			background: url('../img/services/gadgets.png') 57% 50% no-repeat;
+		}
+		&--three{
+			background: url('../img/services/target.png') 65% 50% no-repeat;
+		}
 	}
 	&__title{
 		margin-top: 25px;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 22px;
+		line-height: 1.2;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		@media (max-width: $md) {
+			font-size: 18px;
+		}
 		@media (max-width: $md) {
 			margin-top: 15px;
 		}
 	}
 	&__desc{
 		margin-top: 25px;
+		color: $gray-text;
+		text-align: center;
+		font-size: 14px;
+		line-height: 26px;
+		font-weight: 300;
 		@media (max-width: $md) {
 			margin-top: 15px;
 		}
 	}
-	@media (max-width: $md) {
-		max-width: 480px;
-		flex-direction: column;
-		gap: 25px;
-	}
-}
-.icon-services{
-	width: 92px;
-	height: 92px;
-	border: 2px solid $border-icon;
-	border-radius: 50px;
-	&--one{
-		background: url('../img/services/window.png') center no-repeat;
-	}
-	&--two{
-		background: url('../img/services/gadgets.png') 57% 50% no-repeat;
-	}
-	&--three{
-		background: url('../img/services/target.png') 65% 50% no-repeat;
-	}
-}
-.item-services{
-	position: relative;
-}
-.title-services{
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 22px;
-	line-height: 1.2;
-	font-weight: 700;
-	letter-spacing: 0.16em;
-	@media (max-width: $md) {
-		font-size: 18px;
-	}
-}
-.desc-services{
-	color: $gray-text;
-	text-align: center;
-	font-size: 14px;
-	line-height: 26px;
-	font-weight: 300;
 }

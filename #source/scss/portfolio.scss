@@ -72,7 +72,8 @@
 .img-wrap-portfolio{
 	display: block;
 	overflow: hidden;
-    aspect-ratio: 16 / 9;
+    padding-top: 56.25%;
+    position: relative;
 	background-color: $bg-gray;
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, .2);
 	transition: all .2s ease-in-out;
@@ -85,5 +86,6 @@
 	width: 100%;
 	height: auto;
 	display: block;
-	
+	position: absolute;
+	top: 0;
 }
