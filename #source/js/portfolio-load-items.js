@@ -1,4 +1,9 @@
 const readMoreBtn = document.querySelector('#readmore')
+const filterItems = document.querySelectorAll('[data-filter]')
+
+const countLoadImages = 6
+let alreadyOutputImages = 0
+
 function PortfolioItem(title, img, link, filter){
 	this.title = title
 	this.img = img
@@ -19,30 +24,44 @@ const portfolioItems = [
 	new PortfolioItem('Homeswort', 'theme11', '#', 'other'),
 	new PortfolioItem('Angel', 'theme12', '#', 'web')
 ] 
-const countLoadImages = 6
-let alreadyOutputImages = 0
 
-loadImages()
-readMoreBtn.onclick = function(){
-	loadImages()
-	const currentFilter = document.querySelector('.link-filter--active')
-	applyFilter(currentFilter)
+
+
+
+
+const applyFilter = (e) => {
+	if (e != null) {
+		const currentFilter = e.target
+		filterItems.forEach(filter => {
+			filter.classList.remove('filter__btn--active')
+		})
+		currentFilter.classList.add('filter__btn--active')
+	}
+	const currentFilter = document.querySelector('.filter__btn--active')
+	const id = currentFilter.id		
+	const images = document.querySelectorAll('.grid-portfolio__item')
+	images.forEach(img => {
+		if (id == 'all'){
+			img.style.display = 'block'
+		}else if (img.classList.contains('f_'+id)){
+			img.style.display = 'block'				
+		}else{
+			img.style.display = 'none'
+		}			
+	})
 }
-
-function createListItem(item) { 
+const createListItem = item => { 
 	return ` 
-		<a class="img-wrap-portfolio f_${item.filter}" href="${item.link}">
-			<img src="files/portfolio/${item.img}.jpg" class="preview-portfolio" alt="${item.title}">
-		</a>
+		<li class="grid-portfolio__item f_${item.filter}">
+			<div class="grid-portfolio__img-wrap">
+				<a class="wrap-link" href="${item.link}">
+					<img class="grid-portfolio__img" src="files/portfolio/${item.img}.jpg" alt="${item.title}">
+				</a>
+			</div>
+		</li>
 	` 
 } 
-
-// было актуально, когда выводились все элементы сразу
-// const temp = portfolioItems.map(item => createListItem(item)) 
-// const html = temp.join(' ') 
-// document.querySelector('.grid-portfolio').innerHTML = html 
-
-function loadImages(){
+const loadImages = () => {
 	const temp = []
 	for (let i = 0; i < countLoadImages; i++) {
 		if (alreadyOutputImages == portfolioItems.length){
@@ -56,5 +75,11 @@ function loadImages(){
 		readMoreBtn.style.display = "none"
 	}
 	const html = temp.join(' ') 
-	document.querySelector('.grid-portfolio').innerHTML += html 
+	document.querySelector('#list-grid-portfolio').innerHTML += html 
 }
+filterItems.forEach(filter => {
+	filter.addEventListener('click', applyFilter)
+})
+readMoreBtn.addEventListener('click', loadImages)
+readMoreBtn.addEventListener('click', () => applyFilter(null))
+loadImages()

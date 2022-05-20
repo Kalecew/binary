@@ -1,26 +1,26 @@
 <section class="contacts text-section--dark" id="contact">
 	<div class="container">
 		<h2 class="title title--bottom-line">Contact</h2>
-		<div class="contacts__content content-contacts">
-			<form action="mailto:vlad@htmlbook.ru" enctype="text/plain" method="post" class="content-contacts__form form" id="form">
-				<div class="form__row-text row-form">
-					<div class="form__text-wrap">
-						<label for="name" class="label-form">Your name</label>
-						<input type="text" name="name" id="name" class="form__input input-form input-form--text" placeholder=" " required>
+		<div class="contacts__content">
+			<form class="contacts__form form" action="mailto:vlad@htmlbook.ru" enctype="text/plain" method="post" id="form">
+				<div class="form__row">
+					<div class="form__input-wrap">
+						<label class="form__label" for="name">Your name</label>
+						<input class="form__input form__input--text" type="text" name="name" id="name" placeholder=" " required>
 					</div>
-					<div class="form__text-wrap">
-						<label for="email" class="label-form">Your e-mail</label>
-						<input type="email" name="email" id="email" class="form__input input-form input-form--text" placeholder=" " required>
+					<div class="form__input-wrap">
+						<label class="form__label" for="email">Your e-mail</label>
+						<input class="form__input form__input--text" type="email" name="email" id="email" placeholder=" " required>
 					</div>
 				</div>					
 				<div class="form__textarea-wrap">
-					<label for="meassage" class="label-form">Message</label>
-					<textarea name="meassage" id="meassage" cols="54" rows="7" class="form__input input-form input-form--textarea" placeholder=" " required></textarea>
+					<label class="form__label" for="meassage">Message</label>
+					<textarea class="form__input form__input--textarea" name="meassage" id="meassage" cols="54" rows="7" placeholder=" " required></textarea>
 				</div>
 				<button type="submit" class="form__btn btn" id="submit"><span class="btn__text">Send</span></button>
 			</form>
-			<div class="content-contacts__info info-contacts">
-				<p class="info-contacts__text text-info-contacts">Have an idea for a project? Just looking to explore and see the possibilities? <br>I'm here to help.</p>
+			<div class="contacts__info info-contacts">
+				<p class="info-contacts__text">Have an idea for a project? Just looking to explore and see the possibilities? <br>I'm here to help.</p>
 				<p class="info-contacts__name"><b>Postma Elena</b></p>
 				<div class="info-contacts__social social">
 					<ul class="social__list">
@@ -32,7 +32,7 @@
 						</li>
 					</ul>
 				</div>				
-				<p class="info-contacts__email">e-mail: <a href="mailto:postma.elena@gmail.com" class="email-link-info-contacts"><b>postma.elena@gmail.com</b></a></p>
+				<p class="info-contacts__email-wrap">e-mail: <a class="info-contacts__email" href="mailto:postma.elena@gmail.com"><b>postma.elena@gmail.com</b></a></p>
 			</div>
 		</div>
 	</div>
